@@ -1,0 +1,21 @@
+<!-- <form [formGroup]="form">
+  <div formArrayName="comment">
+    <div *ngFor="let comment of getControls(); let i = index"
+      style="display: flex; flex-direction: column; width: 200px; margin-top: 10px;">
+      <div style="display: flex;">
+        <input type="text" formControlName="{{i}}">
+        <button (click)="sendCommit()">send</button>
+      </div>
+      <div *ngIf="!form.untouched" style="margin-top: 10px; display: flex;">
+        {{text}}
+        <button (click)="addComment()" style="margin-left: 10px;">Add Comment</button>
+      </div>
+    </div>
+  </div>
+</form> -->
+
+<app-input></app-input>
+<app-comment *ngFor="let comment of commentList" [comment]="comment"></app-comment>
+<div *ngIf="!commentList.length">
+  Нет комментов
+</div>

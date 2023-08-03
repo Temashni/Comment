@@ -1,0 +1,4 @@
+<form [formGroup]="form" (submit)="createComment()">
+  <input type="text" formControlName="comment">
+  <button [disabled]="form.invalid">Оставить коммент</button>
+</form>

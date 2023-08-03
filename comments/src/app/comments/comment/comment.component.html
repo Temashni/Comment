@@ -1,0 +1,14 @@
+<div>
+  <div style="display: flex;">
+    <p>{{comment.userName}}</p>&nbsp;
+    <p>{{comment.date}}</p>
+  </div>
+
+  <p>{{comment.text}}</p>
+  <button (click)="onShowReplay()">Ответить</button>
+  <app-input *ngIf="isCreatingReplay" [comment]="comment" (onClose)="onClose()"></app-input>
+</div>
+
+<app-comment *ngFor="let replay of comment.replays" [comment]="replay" 
+  style="padding-left: 30px; display: block;">
+</app-comment>
